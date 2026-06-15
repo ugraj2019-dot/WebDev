@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Understanding HTML Links & CSS</title>
+
+    <style>
+        /* 1. Tag Selector - Applies to ALL <p> tags */
+        p {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Typography: Font family */
+            font-size: 16px;                                             /* Typography: Size */
+            line-height: 1.6;                                            /* Typography: Spacing */
+            color: #333333;                                              /* Color: Dark gray text */
+            background-color: #f9f9f9;                                   /* Background property */
+            padding: 10px;
+            border-left: 4px solid #007BFF;
+        }
+
+        /* 2. Class Selector - Targets elements with class="highlight" */
+        .highlight {
+            background-color: #fff3cd; /* Changes background to light yellow */
+            color: #856404;            /* Changes text to dark yellow/brown */
+        }
+
+        /* 3. ID Selector - Targets the unique element with id="main-definition" */
+        #main-definition {
+            background-color: #d1ecf1; /* Changes background to light blue */
+            color: #0c5460;            /* Changes text to dark blue */
+        }
+
+        /* 4. Demonstrating the "Last Rule Applied" concept */
+        /* This rule targets the same ID as above, but because it is LOWER down, it overrides the color */
+        #main-definition {
+            color: #0b444e; /* Slightly darker blue wins because it's written last */
+        }
+
+        /* 5. Demonstrating !important */
+        .force-alert {
+            /* Even though an ID or Inline style usually beats a Class, !important breaks the rules */
+            background-color: #f8d7da !important; /* Forces a light red background */
+            color: #721c24 !important;            /* Forces a dark red text */
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html">Home</a> | 
+        <a href="about.html">About Us</a> | 
+        <a href="privacy.html">Privacy Policy</a>
+    </nav>
+    
+    <h1>Understanding HTML Links</h1>
+
+    <p id="main-definition" class="force-alert">
+        Hyperlinks are the backbone of the web. They allow users to navigate between pages seamlessly. Below, we explore the two main types of links: 
+        <span style="font-weight: bold; text-decoration: underline; color: #dc3545;">Absolute</span> and 
+        <strong>Relative</strong>.
+    </p>
+
+    <h2>1. Absolute Linking</h2>
+
+    <p>Absolute links point to a specific, full URL on the internet. They must include the protocol (like https://) and the domain name. These are typically used to link to external websites.</p>
+
+    <p><strong>Example:</strong> Learn more about web development by visiting the <a href="https://en.wikipedia.org/wiki/HTTP" target="_blank">Wikipedia page for HTTP</a>.</p>
+    
+    <h2>2. Relative Linking</h2>
+
+    <p class="highlight">
+        Relative links point to a file relative to the current file's location on the same server. They do not include the protocol or domain name. These are ideal for linking pages within your own website because if you change your domain name, the links won't break.
+    </p>
+
+    <div>
+        <strong>Examples:</strong>
+        <ul>
+            <li> Read our <a href="about.html">About Us</a> page to meet the team.</li>
+            <li> Check out our <a href="privacy.html">Privacy Policy</a> to see how we handle data.</li>
+        </ul>
+    </div>
+
+</body>
+</html>
